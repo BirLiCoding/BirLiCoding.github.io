@@ -264,6 +264,352 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/iOS常见crash整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yabo Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tc.sinaimg.cn/maxwidth.800/tc.service.weibo.com/static_jinrongbaguanv_com/5886a925e3bd5fc2a3adf8f9a36324c8.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liyabo的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/24/iOS常见crash整理/" itemprop="url">iOS常见crash整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T12:14:37+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-网络类"><a href="#1-网络类" class="headerlink" title="1.网络类"></a>1.网络类</h3><h5 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*** Assertion failure <span class="keyword">in</span> -[AFJSONRequestSerializer <span class="string">requestWithMethod:</span><span class="string">URLString:</span><span class="string">parameters:</span><span class="string">error:</span>]</div></pre></td></tr></table></figure>
+<h5 id="解决方案-url中包含中文时候需要转码"><a href="#解决方案-url中包含中文时候需要转码" class="headerlink" title="解决方案: url中包含中文时候需要转码"></a>解决方案: url中包含中文时候需要转码</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *encoded = [link stringByAddingPercentEscapesUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line">或者</div><div class="line">stringByAddingPercentEncodingWithAllowedCharacters:[<span class="built_in">NSCharacterSet</span> URLQueryAllowedCharacterSet]</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/iOS常用正则式总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yabo Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tc.sinaimg.cn/maxwidth.800/tc.service.weibo.com/static_jinrongbaguanv_com/5886a925e3bd5fc2a3adf8f9a36324c8.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liyabo的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/21/iOS常用正则式总结/" itemprop="url">iOS常用正则式总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T12:27:28+08:00">
+                2017-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma 正则匹配手机号</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkTelNumber:(<span class="built_in">NSString</span> *) telNumber</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^1+[3578]+\\d&#123;9&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:telNumber];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配用户密码6-18位数字和字母组合</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkPassword:(<span class="built_in">NSString</span> *) password</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]&#123;6,18&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:password];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配用户姓名,20位的中文或英文</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkUserName : (<span class="built_in">NSString</span> *) userName</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^[a-zA-Z一-龥]&#123;1,20&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:userName];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配用户身份证号15或18位</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkUserIdCard: (<span class="built_in">NSString</span> *) idCard</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"(^[0-9]&#123;15&#125;$)|([0-9]&#123;17&#125;([0-9]|X)$)"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:idCard];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹员工号,12位的数字</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkEmployeeNumber : (<span class="built_in">NSString</span> *) number</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^[0-9]&#123;12&#125;"</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:number];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配URL</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkURL : (<span class="built_in">NSString</span> *) url</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^[0-9A-Za-z]&#123;1,50&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:url];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/21/iOS常用正则式总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/ios-切割圆角/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yabo Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tc.sinaimg.cn/maxwidth.800/tc.service.weibo.com/static_jinrongbaguanv_com/5886a925e3bd5fc2a3adf8f9a36324c8.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liyabo的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/11/ios-切割圆角/" itemprop="url">ios 切割圆角</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T09:40:40+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">button.layer.cornerRadius </span>= <span class="number">10</span>.<span class="number">0</span>f<span class="comment">; //弧度</span></div><div class="line"><span class="keyword">button.layer.masksToBounds </span>= YES<span class="comment">;</span></div></pre></td></tr></table></figure>
+<h2 id="贝塞尔曲线切割"><a href="#贝塞尔曲线切割" class="headerlink" title="贝塞尔曲线切割"></a>贝塞尔曲线切割</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 贝塞尔曲线切割 */</span></div><div class="line">   <span class="comment">/**</span></div><div class="line">     *</div><div class="line">     *  @param UIRectCorner  </div><div class="line">     *  左上 UIRectCornerTopLeft     = 1 &lt;&lt; 0,  </div><div class="line">        左下 UIRectCornerBottomLeft  = 1 &lt;&lt; 2,  </div><div class="line">        右下 UIRectCornerBottomRight = 1 &lt;&lt; 3,  </div><div class="line">        所有角 UIRectCornerAllCorners  = ~0UL</div><div class="line">     *</div><div class="line">     */</div><div class="line"><span class="built_in">UIBezierPath</span> *maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:button.bounds byRoundingCorners:<span class="built_in">UIRectCornerTopLeft</span> |  <span class="built_in">UIRectCornerBottomLeft</span> cornerRadii:button.bounds.size];</div><div class="line">    <span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc]init];</div><div class="line">    <span class="comment">//设置大小</span></div><div class="line">    maskLayer.frame = button.bounds;</div><div class="line">    <span class="comment">//设置图形样子</span></div><div class="line">    maskLayer.path = maskPath.CGPath;</div><div class="line">    button.layer.mask = maskLayer;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/11/ios-切割圆角/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/07/iOS-自定义cell多选删除/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -685,7 +1031,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
