@@ -91,17 +91,22 @@
 
 
 
-<meta name="description" content="常用方法12button.layer.cornerRadius = 10.0f; //弧度button.layer.masksToBounds = YES; 贝塞尔曲线切割1234567891011121314151617/* 贝塞尔曲线切割 */   /**     *     *  @param UIRectCorner       *  左上 UIRectCornerTopLeft">
+<meta name="description" content="1.下载所需要的ttf或者otf字体文件,并导入xcode 2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios 切割圆角">
-<meta property="og:url" content="http://yoursite.com/2017/07/11/ios-切割圆角/index.html">
+<meta property="og:title" content="iOS加载自定义字体">
+<meta property="og:url" content="http://yoursite.com/2017/08/18/iOS加载自定义字体/index.html">
 <meta property="og:site_name" content="liyabo的博客">
-<meta property="og:description" content="常用方法12button.layer.cornerRadius = 10.0f; //弧度button.layer.masksToBounds = YES; 贝塞尔曲线切割1234567891011121314151617/* 贝塞尔曲线切割 */   /**     *     *  @param UIRectCorner       *  左上 UIRectCornerTopLeft">
-<meta property="og:updated_time" content="2017-07-11T01:57:47.000Z">
+<meta property="og:description" content="1.下载所需要的ttf或者otf字体文件,并导入xcode 2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:">
+<meta property="og:image" content="http://yoursite.com/Users/liyabo/Desktop/Snip20170818_2.png">
+<meta property="og:image" content="http://yoursite.com/Users/liyabo/Desktop/Snip20170818_3.png">
+<meta property="og:image" content="http://yoursite.com/Users/liyabo/Desktop/Snip20170818_5.png">
+<meta property="og:image" content="http://yoursite.com/Users/liyabo/Desktop/Snip20170818_6.png">
+<meta property="og:updated_time" content="2017-08-18T10:18:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios 切割圆角">
-<meta name="twitter:description" content="常用方法12button.layer.cornerRadius = 10.0f; //弧度button.layer.masksToBounds = YES; 贝塞尔曲线切割1234567891011121314151617/* 贝塞尔曲线切割 */   /**     *     *  @param UIRectCorner       *  左上 UIRectCornerTopLeft">
+<meta name="twitter:title" content="iOS加载自定义字体">
+<meta name="twitter:description" content="1.下载所需要的ttf或者otf字体文件,并导入xcode 2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:">
+<meta name="twitter:image" content="http://yoursite.com/Users/liyabo/Desktop/Snip20170818_2.png">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/11/ios-切割圆角/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/18/iOS加载自定义字体/"/>
 
 
 
 
 
-  <title>ios 切割圆角 | liyabo的博客</title>
+  <title>iOS加载自定义字体 | liyabo的博客</title>
   
 
 
@@ -264,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/ios-切割圆角/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/iOS加载自定义字体/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yabo Li">
@@ -281,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ios 切割圆角</h1>
+          <h1 class="post-title" itemprop="name headline">iOS加载自定义字体</h1>
         
 
         <div class="post-meta">
@@ -293,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T09:40:40+08:00">
-                2017-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T17:57:05+08:00">
+                2017-08-18
               </time>
             
 
@@ -328,9 +333,13 @@
       
 
       
-        <h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">button.layer.cornerRadius </span>= <span class="number">10</span>.<span class="number">0</span>f<span class="comment">; //弧度</span></div><div class="line"><span class="keyword">button.layer.masksToBounds </span>= YES<span class="comment">;</span></div></pre></td></tr></table></figure>
-<h2 id="贝塞尔曲线切割"><a href="#贝塞尔曲线切割" class="headerlink" title="贝塞尔曲线切割"></a>贝塞尔曲线切割</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 贝塞尔曲线切割 */</span></div><div class="line">   <span class="comment">/**</span></div><div class="line">     *</div><div class="line">     *  @param UIRectCorner  </div><div class="line">     *  左上 UIRectCornerTopLeft     = 1 &lt;&lt; 0,  </div><div class="line">        左下 UIRectCornerBottomLeft  = 1 &lt;&lt; 2,  </div><div class="line">        右下 UIRectCornerBottomRight = 1 &lt;&lt; 3,  </div><div class="line">        所有角 UIRectCornerAllCorners  = ~0UL</div><div class="line">     *</div><div class="line">     */</div><div class="line"><span class="built_in">UIBezierPath</span> *maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:button.bounds byRoundingCorners:<span class="built_in">UIRectCornerTopLeft</span> |  <span class="built_in">UIRectCornerBottomLeft</span> cornerRadii:button.bounds.size];</div><div class="line">    <span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc]init];</div><div class="line">    <span class="comment">//设置大小</span></div><div class="line">    maskLayer.frame = button.bounds;</div><div class="line">    <span class="comment">//设置图形样子</span></div><div class="line">    maskLayer.path = maskPath.CGPath;</div><div class="line">    button.layer.mask = maskLayer;</div></pre></td></tr></table></figure>
+        <h5 id="1-下载所需要的ttf或者otf字体文件-并导入xcode"><a href="#1-下载所需要的ttf或者otf字体文件-并导入xcode" class="headerlink" title="1.下载所需要的ttf或者otf字体文件,并导入xcode"></a>1.下载所需要的ttf或者otf字体文件,并导入xcode</h5><p><img src="/Users/liyabo/Desktop/Snip20170818_2.png" alt="Snip20170818_2"></p>
+<h5 id="2-在info-plist中添加一项-Fonts-provided-by-application-填写字体文件名称加后缀-如图"><a href="#2-在info-plist中添加一项-Fonts-provided-by-application-填写字体文件名称加后缀-如图" class="headerlink" title="2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:"></a>2.在info.plist中添加一项:<code>Fonts provided by application</code>,填写字体文件名称加后缀.如图:</h5><p><img src="/Users/liyabo/Desktop/Snip20170818_3.png" alt="Snip20170818_3"></p>
 <a id="more"></a>
+<h5 id="3-想要在工程中使用改字体-需要先查看字体名字，mac上双击字体文件-窗口最上面标题即为字体名称，如图："><a href="#3-想要在工程中使用改字体-需要先查看字体名字，mac上双击字体文件-窗口最上面标题即为字体名称，如图：" class="headerlink" title="3.想要在工程中使用改字体 需要先查看字体名字，mac上双击字体文件 窗口最上面标题即为字体名称，如图："></a>3.想要在工程中使用改字体 需要先查看字体名字，mac上双击字体文件 窗口最上面标题即为字体名称，如图：</h5><p><img src="/Users/liyabo/Desktop/Snip20170818_5.png" alt="Snip20170818_5"></p>
+<h5 id="4-使用字体"><a href="#4-使用字体" class="headerlink" title="4.使用字体"></a>4.使用字体</h5><h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">self.Label<span class="meta">.text</span> = @<span class="string">"DIN字体"</span><span class="comment">;</span></div><div class="line">self.Label.font = [UIFont fontWithName:@<span class="string">"DIN"</span> size:<span class="number">30</span>]<span class="comment">;</span></div></pre></td></tr></table></figure>
+<h6 id="nib"><a href="#nib" class="headerlink" title="nib"></a>nib</h6><p><img src="/Users/liyabo/Desktop/Snip20170818_6.png" alt="Snip20170818_6"></p>
+
       
     </div>
 
@@ -372,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/07/iOS-自定义cell多选删除/" rel="next" title="iOS 自定义cell多选删除">
-                <i class="fa fa-chevron-left"></i> iOS 自定义cell多选删除
+              <a href="/2017/07/24/iOS常见crash整理/" rel="next" title="iOS常见crash整理">
+                <i class="fa fa-chevron-left"></i> iOS常见crash整理
               </a>
             
           </div>
@@ -381,10 +390,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/21/iOS常用正则式总结/" rel="prev" title="iOS常用正则式总结">
-                iOS常用正则式总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贝塞尔曲线切割"><span class="nav-number">2.</span> <span class="nav-text">贝塞尔曲线切割</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-下载所需要的ttf或者otf字体文件-并导入xcode"><span class="nav-number">1.</span> <span class="nav-text">1.下载所需要的ttf或者otf字体文件,并导入xcode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-在info-plist中添加一项-Fonts-provided-by-application-填写字体文件名称加后缀-如图"><span class="nav-number">2.</span> <span class="nav-text">2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-想要在工程中使用改字体-需要先查看字体名字，mac上双击字体文件-窗口最上面标题即为字体名称，如图："><span class="nav-number">3.</span> <span class="nav-text">3.想要在工程中使用改字体 需要先查看字体名字，mac上双击字体文件 窗口最上面标题即为字体名称，如图：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-使用字体"><span class="nav-number">4.</span> <span class="nav-text">4.使用字体</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#代码"><span class="nav-number">4.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#nib"><span class="nav-number">4.2.</span> <span class="nav-text">nib</span></a></li></ol></li></ol></div>
             
 
           </div>
