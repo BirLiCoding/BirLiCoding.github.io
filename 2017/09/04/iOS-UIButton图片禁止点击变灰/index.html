@@ -91,17 +91,17 @@
 
 
 
-<meta name="description" content="1.网络类表现1*** Assertion failure in -[AFJSONRequestSerializer requestWithMethod:URLString:parameters:error:] 解决方案: url中包含中文时候需要转码123NSString *encoded = [link stringByAddingPercentEscapesUsingEncoding:NSU">
+<meta name="description" content="一行代码解决1rightBt.adjustsImageWhenHighlighted = NO;">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS常见crash整理">
-<meta property="og:url" content="http://yoursite.com/2017/07/24/iOS常见crash整理/index.html">
+<meta property="og:title" content="iOS UIButton图片禁止点击变灰">
+<meta property="og:url" content="http://yoursite.com/2017/09/04/iOS-UIButton图片禁止点击变灰/index.html">
 <meta property="og:site_name" content="liyabo的博客">
-<meta property="og:description" content="1.网络类表现1*** Assertion failure in -[AFJSONRequestSerializer requestWithMethod:URLString:parameters:error:] 解决方案: url中包含中文时候需要转码123NSString *encoded = [link stringByAddingPercentEscapesUsingEncoding:NSU">
-<meta property="og:updated_time" content="2017-08-31T11:59:47.000Z">
+<meta property="og:description" content="一行代码解决1rightBt.adjustsImageWhenHighlighted = NO;">
+<meta property="og:updated_time" content="2017-09-05T06:44:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS常见crash整理">
-<meta name="twitter:description" content="1.网络类表现1*** Assertion failure in -[AFJSONRequestSerializer requestWithMethod:URLString:parameters:error:] 解决方案: url中包含中文时候需要转码123NSString *encoded = [link stringByAddingPercentEscapesUsingEncoding:NSU">
+<meta name="twitter:title" content="iOS UIButton图片禁止点击变灰">
+<meta name="twitter:description" content="一行代码解决1rightBt.adjustsImageWhenHighlighted = NO;">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/24/iOS常见crash整理/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/04/iOS-UIButton图片禁止点击变灰/"/>
 
 
 
 
 
-  <title>iOS常见crash整理 | liyabo的博客</title>
+  <title>iOS UIButton图片禁止点击变灰 | liyabo的博客</title>
   
 
 
@@ -264,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/iOS常见crash整理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/iOS-UIButton图片禁止点击变灰/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yabo Li">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS常见crash整理</h1>
+          <h1 class="post-title" itemprop="name headline">iOS UIButton图片禁止点击变灰</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T12:14:37+08:00">
-                2017-07-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T17:48:33+08:00">
+                2017-09-04
               </time>
             
 
@@ -328,10 +328,7 @@
       
 
       
-        <h3 id="1-网络类"><a href="#1-网络类" class="headerlink" title="1.网络类"></a>1.网络类</h3><h5 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*** Assertion failure <span class="keyword">in</span> -[AFJSONRequestSerializer <span class="string">requestWithMethod:</span><span class="string">URLString:</span><span class="string">parameters:</span><span class="string">error:</span>]</div></pre></td></tr></table></figure>
-<h5 id="解决方案-url中包含中文时候需要转码"><a href="#解决方案-url中包含中文时候需要转码" class="headerlink" title="解决方案: url中包含中文时候需要转码"></a>解决方案: url中包含中文时候需要转码</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *encoded = [link stringByAddingPercentEscapesUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line">或者</div><div class="line">stringByAddingPercentEncodingWithAllowedCharacters:[<span class="built_in">NSCharacterSet</span> URLQueryAllowedCharacterSet]</div></pre></td></tr></table></figure>
-<h3 id="2-UI类"><a href="#2-UI类" class="headerlink" title="2.UI类"></a>2.UI类</h3><h5 id="表现-1"><a href="#表现-1" class="headerlink" title="表现"></a>表现</h5><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invalid <span class="keyword">mode</span> <span class="string">'kCFRunLoopCommonModes'</span> provided <span class="keyword">to</span> CFRunLoopRunSpecific - <span class="keyword">break</span> <span class="keyword">on</span> _CFRunLoopError_Run</div></pre></td></tr></table></figure>
-<h5 id="解决方案-退出页面时需要移除监听observe"><a href="#解决方案-退出页面时需要移除监听observe" class="headerlink" title="解决方案: 退出页面时需要移除监听observe"></a>解决方案: 退出页面时需要移除监听observe</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[_footerView.scrollView <span class="string">removeObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"contentSize"</span>];</div></pre></td></tr></table></figure>
+        <h3 id="一行代码解决"><a href="#一行代码解决" class="headerlink" title="一行代码解决"></a>一行代码解决</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">rightBt.adjustsImageWhenHighlighted</span> <span class="string">=</span> <span class="literal">NO</span><span class="string">;</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -374,8 +371,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/21/iOS常用正则式总结/" rel="next" title="iOS常用正则式总结">
-                <i class="fa fa-chevron-left"></i> iOS常用正则式总结
+              <a href="/2017/08/18/iOS加载自定义字体/" rel="next" title="iOS加载自定义字体">
+                <i class="fa fa-chevron-left"></i> iOS加载自定义字体
               </a>
             
           </div>
@@ -384,8 +381,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/18/iOS加载自定义字体/" rel="prev" title="iOS加载自定义字体">
-                iOS加载自定义字体 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/05/iOS-自定义View视图刷新策略/" rel="prev" title="iOS 自定义View视图刷新策略">
+                iOS 自定义View视图刷新策略 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -506,7 +503,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-网络类"><span class="nav-number">1.</span> <span class="nav-text">1.网络类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表现"><span class="nav-number">1.0.1.</span> <span class="nav-text">表现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案-url中包含中文时候需要转码"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决方案: url中包含中文时候需要转码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-UI类"><span class="nav-number">2.</span> <span class="nav-text">2.UI类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表现-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">表现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案-退出页面时需要移除监听observe"><span class="nav-number">2.0.2.</span> <span class="nav-text">解决方案: 退出页面时需要移除监听observe</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一行代码解决"><span class="nav-number">1.</span> <span class="nav-text">一行代码解决</span></a></li></ol></div>
             
 
           </div>

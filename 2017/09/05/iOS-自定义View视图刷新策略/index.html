@@ -91,17 +91,17 @@
 
 
 
-<meta name="description" content="1.网络类表现1*** Assertion failure in -[AFJSONRequestSerializer requestWithMethod:URLString:parameters:error:] 解决方案: url中包含中文时候需要转码123NSString *encoded = [link stringByAddingPercentEscapesUsingEncoding:NSU">
+<meta name="description" content="1.刷新数据####不可以在View创建的过程中使用属性值 123456789101112131415- (instancetype)initWithFrame:(CGRect)frame&amp;#123;    self = [super initWithFrame:frame];    if (self) &amp;#123;        [self setupSubViews];    &amp;#125;">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS常见crash整理">
-<meta property="og:url" content="http://yoursite.com/2017/07/24/iOS常见crash整理/index.html">
+<meta property="og:title" content="iOS 自定义View视图刷新策略">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/iOS-自定义View视图刷新策略/index.html">
 <meta property="og:site_name" content="liyabo的博客">
-<meta property="og:description" content="1.网络类表现1*** Assertion failure in -[AFJSONRequestSerializer requestWithMethod:URLString:parameters:error:] 解决方案: url中包含中文时候需要转码123NSString *encoded = [link stringByAddingPercentEscapesUsingEncoding:NSU">
-<meta property="og:updated_time" content="2017-08-31T11:59:47.000Z">
+<meta property="og:description" content="1.刷新数据####不可以在View创建的过程中使用属性值 123456789101112131415- (instancetype)initWithFrame:(CGRect)frame&amp;#123;    self = [super initWithFrame:frame];    if (self) &amp;#123;        [self setupSubViews];    &amp;#125;">
+<meta property="og:updated_time" content="2017-09-05T06:36:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS常见crash整理">
-<meta name="twitter:description" content="1.网络类表现1*** Assertion failure in -[AFJSONRequestSerializer requestWithMethod:URLString:parameters:error:] 解决方案: url中包含中文时候需要转码123NSString *encoded = [link stringByAddingPercentEscapesUsingEncoding:NSU">
+<meta name="twitter:title" content="iOS 自定义View视图刷新策略">
+<meta name="twitter:description" content="1.刷新数据####不可以在View创建的过程中使用属性值 123456789101112131415- (instancetype)initWithFrame:(CGRect)frame&amp;#123;    self = [super initWithFrame:frame];    if (self) &amp;#123;        [self setupSubViews];    &amp;#125;">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/24/iOS常见crash整理/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/05/iOS-自定义View视图刷新策略/"/>
 
 
 
 
 
-  <title>iOS常见crash整理 | liyabo的博客</title>
+  <title>iOS 自定义View视图刷新策略 | liyabo的博客</title>
   
 
 
@@ -264,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/iOS常见crash整理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/iOS-自定义View视图刷新策略/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yabo Li">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS常见crash整理</h1>
+          <h1 class="post-title" itemprop="name headline">iOS 自定义View视图刷新策略</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T12:14:37+08:00">
-                2017-07-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T11:57:06+08:00">
+                2017-09-05
               </time>
             
 
@@ -328,10 +328,11 @@
       
 
       
-        <h3 id="1-网络类"><a href="#1-网络类" class="headerlink" title="1.网络类"></a>1.网络类</h3><h5 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*** Assertion failure <span class="keyword">in</span> -[AFJSONRequestSerializer <span class="string">requestWithMethod:</span><span class="string">URLString:</span><span class="string">parameters:</span><span class="string">error:</span>]</div></pre></td></tr></table></figure>
-<h5 id="解决方案-url中包含中文时候需要转码"><a href="#解决方案-url中包含中文时候需要转码" class="headerlink" title="解决方案: url中包含中文时候需要转码"></a>解决方案: url中包含中文时候需要转码</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *encoded = [link stringByAddingPercentEscapesUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line">或者</div><div class="line">stringByAddingPercentEncodingWithAllowedCharacters:[<span class="built_in">NSCharacterSet</span> URLQueryAllowedCharacterSet]</div></pre></td></tr></table></figure>
-<h3 id="2-UI类"><a href="#2-UI类" class="headerlink" title="2.UI类"></a>2.UI类</h3><h5 id="表现-1"><a href="#表现-1" class="headerlink" title="表现"></a>表现</h5><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invalid <span class="keyword">mode</span> <span class="string">'kCFRunLoopCommonModes'</span> provided <span class="keyword">to</span> CFRunLoopRunSpecific - <span class="keyword">break</span> <span class="keyword">on</span> _CFRunLoopError_Run</div></pre></td></tr></table></figure>
-<h5 id="解决方案-退出页面时需要移除监听observe"><a href="#解决方案-退出页面时需要移除监听observe" class="headerlink" title="解决方案: 退出页面时需要移除监听observe"></a>解决方案: 退出页面时需要移除监听observe</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[_footerView.scrollView <span class="string">removeObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"contentSize"</span>];</div></pre></td></tr></table></figure>
+        <h3 id="1-刷新数据"><a href="#1-刷新数据" class="headerlink" title="1.刷新数据"></a>1.刷新数据</h3><p>####不可以在View创建的过程中使用属性值</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</div><div class="line">&#123;</div><div class="line">    <span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame];</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>) &#123;</div><div class="line">        [<span class="keyword">self</span> setupSubViews];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setupSubViews</div><div class="line">&#123;<span class="comment">//把属性值在view创建的过程中赋给空间 是错误的</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.monthDate) &#123;</div><div class="line">        [_monthButton setTitle:<span class="keyword">self</span>.monthDate forState:<span class="built_in">UIControlStateNormal</span>];</div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>####正确的做法 在view创建完成后主动调用自定义的refreshi方法刷新</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)refreshDate</div><div class="line">&#123;</div><div class="line">    <span class="comment">//默认时间</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.monthDate) &#123;</div><div class="line">        [_monthButton setTitle:<span class="keyword">self</span>.monthDate forState:<span class="built_in">UIControlStateNormal</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="刷新subViews"><a href="#刷新subViews" class="headerlink" title="刷新subViews"></a>刷新subViews</h3><h4 id="从父视图移除-属性类的子视图需要赋空"><a href="#从父视图移除-属性类的子视图需要赋空" class="headerlink" title="从父视图移除 属性类的子视图需要赋空"></a>从父视图移除 属性类的子视图需要赋空</h4><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">-(void)clear</div><div class="line">&#123;</div><div class="line">    <span class="variable">_valueArr</span> = <span class="literal">nil</span>;</div><div class="line">    <span class="variable">_descArr</span> = <span class="literal">nil</span>;</div><div class="line">    </div><div class="line">    </div><div class="line">    [<span class="variable">_showInfoView</span> removeFromSuperview];<span class="comment">//先移除子视图的子视图</span></div><div class="line">    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];<span class="comment">//一句代码移除所有子视图</span></div><div class="line">    </div><div class="line">    <span class="comment">//属性类子视图 需要赋空 不然容易出错</span></div><div class="line">    <span class="variable">_showInfoView</span> = <span class="literal">nil</span>;</div><div class="line">    <span class="variable">_pieForeView</span> = <span class="literal">nil</span>;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -374,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/21/iOS常用正则式总结/" rel="next" title="iOS常用正则式总结">
-                <i class="fa fa-chevron-left"></i> iOS常用正则式总结
+              <a href="/2017/09/04/iOS-UIButton图片禁止点击变灰/" rel="next" title="iOS UIButton图片禁止点击变灰">
+                <i class="fa fa-chevron-left"></i> iOS UIButton图片禁止点击变灰
               </a>
             
           </div>
@@ -384,8 +385,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/18/iOS加载自定义字体/" rel="prev" title="iOS加载自定义字体">
-                iOS加载自定义字体 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/05/iOS-金钱货币的计算问题/" rel="prev" title="iOS 金钱货币的计算问题">
+                iOS 金钱货币的计算问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -506,7 +507,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-网络类"><span class="nav-number">1.</span> <span class="nav-text">1.网络类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表现"><span class="nav-number">1.0.1.</span> <span class="nav-text">表现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案-url中包含中文时候需要转码"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决方案: url中包含中文时候需要转码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-UI类"><span class="nav-number">2.</span> <span class="nav-text">2.UI类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表现-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">表现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案-退出页面时需要移除监听observe"><span class="nav-number">2.0.2.</span> <span class="nav-text">解决方案: 退出页面时需要移除监听observe</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-刷新数据"><span class="nav-number">1.</span> <span class="nav-text">1.刷新数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刷新subViews"><span class="nav-number">2.</span> <span class="nav-text">刷新subViews</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从父视图移除-属性类的子视图需要赋空"><span class="nav-number">2.1.</span> <span class="nav-text">从父视图移除 属性类的子视图需要赋空</span></a></li></ol></li></ol></div>
             
 
           </div>
