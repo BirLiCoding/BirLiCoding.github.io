@@ -6,24 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>iOS加载自定义字体 | liyabo的博客</title>
+  <title>iOS tableView cell点击与自定义手势tap冲突解决 | liyabo的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.下载所需要的ttf或者otf字体文件,并导入xcode 2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:">
+  <meta name="description" content="有时候我们会给tableView 添加tap手势 或者 给tableView的父视图添加Tap手势 来完成某种动作，但是发现添加手势之后，点击cell就会没有反应，两种点击手势发生了冲突 解决方案给手势添加代理delegate，然后UIGestureRecognizerDelegate的以下一个代理方法即可">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS加载自定义字体">
-<meta property="og:url" content="http://yoursite.com/2017/08/18/iOS加载自定义字体/index.html">
+<meta property="og:title" content="iOS tableView cell点击与自定义手势tap冲突解决">
+<meta property="og:url" content="http://yoursite.com/2017/09/06/iOS-tableView-cell点击与自定义手势tap冲突解决/index.html">
 <meta property="og:site_name" content="liyabo的博客">
-<meta property="og:description" content="1.下载所需要的ttf或者otf字体文件,并导入xcode 2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:">
-<meta property="og:image" content="http://yoursite.com/uploads/Snip20170818_2.png">
-<meta property="og:image" content="http://yoursite.com/uploads/Snip20170818_3.png">
-<meta property="og:image" content="http://yoursite.com/uploads/Snip20170818_5.png">
-<meta property="og:image" content="http://yoursite.com/uploads/Snip20170818_6.png">
-<meta property="og:updated_time" content="2017-08-18T10:25:57.000Z">
+<meta property="og:description" content="有时候我们会给tableView 添加tap手势 或者 给tableView的父视图添加Tap手势 来完成某种动作，但是发现添加手势之后，点击cell就会没有反应，两种点击手势发生了冲突 解决方案给手势添加代理delegate，然后UIGestureRecognizerDelegate的以下一个代理方法即可">
+<meta property="og:updated_time" content="2017-09-06T07:51:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS加载自定义字体">
-<meta name="twitter:description" content="1.下载所需要的ttf或者otf字体文件,并导入xcode 2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:">
-<meta name="twitter:image" content="http://yoursite.com/uploads/Snip20170818_2.png">
+<meta name="twitter:title" content="iOS tableView cell点击与自定义手势tap冲突解决">
+<meta name="twitter:description" content="有时候我们会给tableView 添加tap手势 或者 给tableView的父视图添加Tap手势 来完成某种动作，但是发现添加手势之后，点击cell就会没有反应，两种点击手势发生了冲突 解决方案给手势添加代理delegate，然后UIGestureRecognizerDelegate的以下一个代理方法即可">
   
     <link rel="alternative" href="/atom.xml" title="liyabo的博客" type="application/atom+xml">
   
@@ -163,32 +158,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-iOS加载自定义字体" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-tableView-cell点击与自定义手势tap冲突解决" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      iOS加载自定义字体
+      iOS tableView cell点击与自定义手势tap冲突解决
     </h1>
   
 
         
-        <a href="/2017/08/18/iOS加载自定义字体/" class="archive-article-date">
-  	<time datetime="2017-08-18T09:57:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
+        <a href="/2017/09/06/iOS-tableView-cell点击与自定义手势tap冲突解决/" class="archive-article-date">
+  	<time datetime="2017-09-06T07:48:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1-下载所需要的ttf或者otf字体文件-并导入xcode"><a href="#1-下载所需要的ttf或者otf字体文件-并导入xcode" class="headerlink" title="1.下载所需要的ttf或者otf字体文件,并导入xcode"></a>1.下载所需要的ttf或者otf字体文件,并导入xcode</h5><p><img src="/uploads/Snip20170818_2.png" alt="Snip20170818_2"></p>
-<h5 id="2-在info-plist中添加一项-Fonts-provided-by-application-填写字体文件名称加后缀-如图"><a href="#2-在info-plist中添加一项-Fonts-provided-by-application-填写字体文件名称加后缀-如图" class="headerlink" title="2.在info.plist中添加一项:Fonts provided by application,填写字体文件名称加后缀.如图:"></a>2.在info.plist中添加一项:<code>Fonts provided by application</code>,填写字体文件名称加后缀.如图:</h5><p><img src="/uploads/Snip20170818_3.png" alt="Snip20170818_3"></p>
+        <p>有时候我们会给tableView 添加tap手势 或者 给tableView的父视图添加Tap手势 来完成某种动作，但是发现添加手势之后，点击cell就会没有反应，两种点击手势发生了冲突</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>给手势添加代理delegate，然后UIGestureRecognizerDelegate的以下一个代理方法即可</p>
 <a id="more"></a>
-<h5 id="3-想要在工程中使用改字体-需要先查看字体名字，mac上双击字体文件-窗口最上面标题即为字体名称，如图："><a href="#3-想要在工程中使用改字体-需要先查看字体名字，mac上双击字体文件-窗口最上面标题即为字体名称，如图：" class="headerlink" title="3.想要在工程中使用改字体 需要先查看字体名字，mac上双击字体文件 窗口最上面标题即为字体名称，如图："></a>3.想要在工程中使用改字体 需要先查看字体名字，mac上双击字体文件 窗口最上面标题即为字体名称，如图：</h5><p><img src="/uploads/Snip20170818_5.png" alt="Snip20170818_5"></p>
-<h5 id="4-使用字体"><a href="#4-使用字体" class="headerlink" title="4.使用字体"></a>4.使用字体</h5><h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">self.Label<span class="meta">.text</span> = @<span class="string">"DIN字体"</span><span class="comment">;</span></div><div class="line">self.Label.font = [UIFont fontWithName:@<span class="string">"DIN"</span> size:<span class="number">30</span>]<span class="comment">;</span></div></pre></td></tr></table></figure>
-<h6 id="nib"><a href="#nib" class="headerlink" title="nib"></a>nib</h6><p><img src="/uploads/Snip20170818_6.png" alt="Snip20170818_6"></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - UIGestureRecognizerDelegate  </span></div><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch  </div><div class="line">&#123;  </div><div class="line">    <span class="comment">// 输出点击的view的类名  </span></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, <span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]));  </div><div class="line"></div><div class="line">    <span class="comment">// 若为UITableViewCellContentView（即点击了tableViewCell），则不截获Touch事件  </span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;  </div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">return</span>  <span class="literal">YES</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -279,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/18/iOS加载自定义字体/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/06/iOS-tableView-cell点击与自定义手势tap冲突解决/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,18 +286,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/04/iOS-UIButton图片禁止点击变灰/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          iOS UIButton图片禁止点击变灰
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/24/iOS常见crash整理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS常见crash整理</div>
+    <a href="/2017/09/05/iOS实现一个颜色渐变的弧形进度条/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS实现一个颜色渐变的弧形进度条</div>
       <i class="icon-circle-right"></i>
     </a>
   
