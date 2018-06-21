@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | liyabo的博客</title>
+  <title>iOS UIWebView根据web内容大小实时刷新webView高度 | liyabo的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="倚楼听风雨，花落方知惜！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="liyabo的博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="项目中有时候会遇到这样的情况 需要禁止webView内部滑动 让webView本身跟着父视图一起滑动，这样就需要确定webView的高度，但是iOS端提前是不知道h5内容高度的 这就需要我们实时根据web内容刷新webView的高度  #解决方案1.创建webView时候需要先禁止webView滑动1_footerView.scrollView.scrollEnabled = NO;">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS UIWebView根据web内容大小实时刷新webView高度">
+<meta property="og:url" content="http://yoursite.com/2017/09/06/iOS-UIWebView根据web内容大小实时刷新webView高度/index.html">
 <meta property="og:site_name" content="liyabo的博客">
-<meta property="og:description" content="倚楼听风雨，花落方知惜！">
+<meta property="og:description" content="项目中有时候会遇到这样的情况 需要禁止webView内部滑动 让webView本身跟着父视图一起滑动，这样就需要确定webView的高度，但是iOS端提前是不知道h5内容高度的 这就需要我们实时根据web内容刷新webView的高度  #解决方案1.创建webView时候需要先禁止webView滑动1_footerView.scrollView.scrollEnabled = NO;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-06T09:03:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liyabo的博客">
-<meta name="twitter:description" content="倚楼听风雨，花落方知惜！">
+<meta name="twitter:title" content="iOS UIWebView根据web内容大小实时刷新webView高度">
+<meta name="twitter:description" content="项目中有时候会遇到这样的情况 需要禁止webView内部滑动 让webView本身跟着父视图一起滑动，这样就需要确定webView的高度，但是iOS端提前是不知道h5内容高度的 这就需要我们实时根据web内容刷新webView的高度  #解决方案1.创建webView时候需要先禁止webView滑动1_footerView.scrollView.scrollEnabled = NO;">
   
     <link rel="alternative" href="/atom.xml" title="liyabo的博客" type="application/atom+xml">
   
@@ -157,36 +159,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-iOS-UIWebView根据web内容大小实时刷新webView高度" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS UIWebView根据web内容大小实时刷新webView高度
+    </h1>
+  
+
+        
+        <a href="/2017/09/06/iOS-UIWebView根据web内容大小实时刷新webView高度/" class="archive-article-date">
+  	<time datetime="2017-09-06T08:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>项目中有时候会遇到这样的情况 需要禁止webView内部滑动 让webView本身跟着父视图一起滑动，这样就需要确定webView的高度，但是iOS端提前是不知道h5内容高度的 这就需要我们实时根据web内容刷新webView的高度</p>
+<hr>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="#解决方案"></a>#解决方案</h2><h4 id="1-创建webView时候需要先禁止webView滑动"><a href="#1-创建webView时候需要先禁止webView滑动" class="headerlink" title="1.创建webView时候需要先禁止webView滑动"></a>1.创建webView时候需要先禁止webView滑动</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_footerView.<span class="keyword">scrollView.scrollEnabled </span>= NO<span class="comment">;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>####2.使用KVO监听<code>webView</code>的<code>contentSize</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[_footerView.scrollView <span class="string">addObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"contentSize"</span> <span class="string">options:</span>NSKeyValueObservingOptionNew <span class="string">context:</span>nil];</div></pre></td></tr></table></figure>
+<p>####3.实现监听方法</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)<span class="string">observeValueForKeyPath:</span>(NSString *)keyPath <span class="string">ofObject:</span>(id)object <span class="string">change:</span>(NSDictionary *)change <span class="string">context:</span>(<span class="keyword">void</span> *)context</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ([keyPath <span class="string">isEqualToString:</span>@<span class="string">"contentSize"</span>]) &#123;</div><div class="line">        CGFloat webViewHeight = [[_footerView <span class="string">stringByEvaluatingJavaScriptFromString:</span>@<span class="string">"document.body.scrollHeight"</span>] floatValue];</div><div class="line">        <span class="comment">//获取内容高度后 更新webView高度</span></div><div class="line">        CGRect newFrame	   = _footerView.frame;</div><div class="line">        newFrame.size.height  = webViewHeight;</div><div class="line">        _footerView.frame = newFrame;</div><div class="line">        [_tabelView reloadData];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>document.body.offsetHeight</code>、<code>document.body.scrollHeight</code> 和 <code>document.body.clientHeight</code><strong><em>三个似乎是一个意思 但有时候个别不管用 可以都试试 滑稽！</em></strong></p>
+<h4 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码"></a>全部代码</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">_footerView= [[UIWebView alloc]<span class="string">initWithFrame:</span>CGRectMake(<span class="number">0</span>, <span class="number">0</span>, kScreen_width, <span class="number">100</span>)];</div><div class="line">    _footerView.delegate = self;</div><div class="line">    _footerView.scrollView.scrollEnabled = NO;</div><div class="line">    </div><div class="line">    </div><div class="line">    [_footerView <span class="string">loadRequest:</span>[NSURLRequest <span class="string">requestWithURL:</span>[NSURL <span class="string">URLWithString:</span>MyGradeH5Url]]];</div><div class="line">    [_footerView.scrollView <span class="string">addObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"contentSize"</span> <span class="string">options:</span>NSKeyValueObservingOptionNew <span class="string">context:</span>nil];</div><div class="line"><span class="comment">//</span></div><div class="line">    _tabelView.tableFooterView = _footerView;</div><div class="line">    </div><div class="line">- (<span class="keyword">void</span>)<span class="string">observeValueForKeyPath:</span>(NSString *)keyPath <span class="string">ofObject:</span>(id)object <span class="string">change:</span>(NSDictionary *)change <span class="string">context:</span>(<span class="keyword">void</span> *)context</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ([keyPath <span class="string">isEqualToString:</span>@<span class="string">"contentSize"</span>]) &#123;</div><div class="line">        CGFloat webViewHeight = [[_footerView <span class="string">stringByEvaluatingJavaScriptFromString:</span>@<span class="string">"document.body.scrollHeight"</span>] floatValue];</div><div class="line">        CGRect newFrame	   = _footerView.frame;</div><div class="line">        newFrame.size.height  = webViewHeight;</div><div class="line">        _footerView.frame = newFrame;</div><div class="line">        [_tabelView reloadData];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/21/iOS常用正则式总结/" class="archive-article-date">
-  	<time datetime="2017-07-21T04:27:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/21/iOS常用正则式总结/">iOS常用正则式总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,174 +229,97 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/06/iOS-UIWebView根据web内容大小实时刷新webView高度/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/11/ios-切割圆角/" class="archive-article-date">
-  	<time datetime="2017-07-11T01:40:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/ios-切割圆角/">ios 切割圆角</a>
-    </h1>
+    <a href="/2018/06/21/Python脚本：上传文件到七牛/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python脚本：上传文件到七牛
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/06/iOS-tableView-cell点击与自定义手势tap冲突解决/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS tableView cell点击与自定义手势tap冲突解决</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/07/iOS-自定义cell多选删除/" class="archive-article-date">
-  	<time datetime="2017-07-07T05:37:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/iOS-自定义cell多选删除/">iOS 自定义cell多选删除</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/05/iOS开发-非常全的三方库、插件、大牛博客等等/" class="archive-article-date">
-  	<time datetime="2017-07-05T02:56:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/05/iOS开发-非常全的三方库、插件、大牛博客等等/">iOS开发 非常全的三方库、插件、大牛博客等等</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/03/Hexo＋GitHub搭建博客/" class="archive-article-date">
-  	<time datetime="2017-07-03T12:43:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/03/Hexo＋GitHub搭建博客/">Hexo＋GitHub搭建博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">网站Web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -389,8 +343,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
