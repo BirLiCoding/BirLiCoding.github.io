@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>liyabo的博客</title>
+  <title>Archives: 2019 | liyabo的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="倚楼听风雨，花落方知惜！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="liyabo的博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
 <meta property="og:site_name" content="liyabo的博客">
 <meta property="og:description" content="倚楼听风雨，花落方知惜！">
 <meta property="og:locale" content="zh-Hans">
@@ -159,416 +159,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-iOS常见crash整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/02/27/Caddy同时配置Web和Filebrowser/" class="archive-article-date">
+  	<time datetime="2019-02-27T06:58:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/iOS常见crash整理/">iOS常见crash整理</a>
+      <a class="archive-article-title" href="/2019/02/27/Caddy同时配置Web和Filebrowser/">Caddy同时配置Web和Filebrowser</a>
     </h1>
   
 
-        
-        <a href="/2017/07/24/iOS常见crash整理/" class="archive-article-date">
-  	<time datetime="2017-07-24T04:14:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-网络类"><a href="#1-网络类" class="headerlink" title="1.网络类"></a>1.网络类</h3><h5 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*** Assertion failure <span class="keyword">in</span> -[AFJSONRequestSerializer <span class="string">requestWithMethod:</span><span class="string">URLString:</span><span class="string">parameters:</span><span class="string">error:</span>]</div></pre></td></tr></table></figure>
-<h5 id="解决方案-url中包含中文时候需要转码"><a href="#解决方案-url中包含中文时候需要转码" class="headerlink" title="解决方案: url中包含中文时候需要转码"></a>解决方案: url中包含中文时候需要转码</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *encoded = [link stringByAddingPercentEscapesUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line">或者</div><div class="line">stringByAddingPercentEncodingWithAllowedCharacters:[<span class="built_in">NSCharacterSet</span> URLQueryAllowedCharacterSet]</div></pre></td></tr></table></figure>
-<h3 id="2-UI类"><a href="#2-UI类" class="headerlink" title="2.UI类"></a>2.UI类</h3><h5 id="表现-1"><a href="#表现-1" class="headerlink" title="表现"></a>表现</h5><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invalid <span class="keyword">mode</span> <span class="string">'kCFRunLoopCommonModes'</span> provided <span class="keyword">to</span> CFRunLoopRunSpecific - <span class="keyword">break</span> <span class="keyword">on</span> _CFRunLoopError_Run</div></pre></td></tr></table></figure>
-<h5 id="解决方案-退出页面时需要移除监听observe"><a href="#解决方案-退出页面时需要移除监听observe" class="headerlink" title="解决方案: 退出页面时需要移除监听observe"></a>解决方案: 退出页面时需要移除监听observe</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[_footerView.scrollView <span class="string">removeObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"contentSize"</span>];</div></pre></td></tr></table></figure>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/24/iOS常见crash整理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
   
-    <article id="post-iOS常用正则式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/21/iOS常用正则式总结/">iOS常用正则式总结</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/21/iOS常用正则式总结/" class="archive-article-date">
-  	<time datetime="2017-07-21T04:27:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma 正则匹配手机号</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkTelNumber:(<span class="built_in">NSString</span> *) telNumber</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^1+[3578]+\\d&#123;9&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:telNumber];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配用户密码6-18位数字和字母组合</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkPassword:(<span class="built_in">NSString</span> *) password</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]&#123;6,18&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:password];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配用户姓名,20位的中文或英文</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkUserName : (<span class="built_in">NSString</span> *) userName</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^[a-zA-Z一-龥]&#123;1,20&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:userName];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配用户身份证号15或18位</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkUserIdCard: (<span class="built_in">NSString</span> *) idCard</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"(^[0-9]&#123;15&#125;$)|([0-9]&#123;17&#125;([0-9]|X)$)"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:idCard];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹员工号,12位的数字</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkEmployeeNumber : (<span class="built_in">NSString</span> *) number</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^[0-9]&#123;12&#125;"</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:number];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma 正则匹配URL</span></div><div class="line">+ (<span class="built_in">BOOL</span>)checkURL : (<span class="built_in">NSString</span> *) url</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSString</span> *pattern = <span class="string">@"^[0-9A-Za-z]&#123;1,50&#125;"</span>;</div><div class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, pattern];</div><div class="line">    <span class="built_in">BOOL</span> isMatch = [pred evaluateWithObject:url];</div><div class="line">    <span class="keyword">return</span> isMatch;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/07/21/iOS常用正则式总结/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/21/iOS常用正则式总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-ios-切割圆角" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/ios-切割圆角/">ios 切割圆角</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/11/ios-切割圆角/" class="archive-article-date">
-  	<time datetime="2017-07-11T01:40:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">button.layer.cornerRadius </span>= <span class="number">10</span>.<span class="number">0</span>f<span class="comment">; //弧度</span></div><div class="line"><span class="keyword">button.layer.masksToBounds </span>= YES<span class="comment">;</span></div></pre></td></tr></table></figure>
-<h2 id="贝塞尔曲线切割"><a href="#贝塞尔曲线切割" class="headerlink" title="贝塞尔曲线切割"></a>贝塞尔曲线切割</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 贝塞尔曲线切割 */</span></div><div class="line">   <span class="comment">/**</span></div><div class="line">     *</div><div class="line">     *  @param UIRectCorner  </div><div class="line">     *  左上 UIRectCornerTopLeft     = 1 &lt;&lt; 0,  </div><div class="line">        左下 UIRectCornerBottomLeft  = 1 &lt;&lt; 2,  </div><div class="line">        右下 UIRectCornerBottomRight = 1 &lt;&lt; 3,  </div><div class="line">        所有角 UIRectCornerAllCorners  = ~0UL</div><div class="line">     *</div><div class="line">     */</div><div class="line"><span class="built_in">UIBezierPath</span> *maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:button.bounds byRoundingCorners:<span class="built_in">UIRectCornerTopLeft</span> |  <span class="built_in">UIRectCornerBottomLeft</span> cornerRadii:button.bounds.size];</div><div class="line">    <span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc]init];</div><div class="line">    <span class="comment">//设置大小</span></div><div class="line">    maskLayer.frame = button.bounds;</div><div class="line">    <span class="comment">//设置图形样子</span></div><div class="line">    maskLayer.path = maskPath.CGPath;</div><div class="line">    button.layer.mask = maskLayer;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/07/11/ios-切割圆角/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/11/ios-切割圆角/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-iOS-自定义cell多选删除" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/07/iOS-自定义cell多选删除/">iOS 自定义cell多选删除</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/07/iOS-自定义cell多选删除/" class="archive-article-date">
-  	<time datetime="2017-07-07T05:37:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="编辑模式设定"><a href="#编辑模式设定" class="headerlink" title="编辑模式设定"></a>编辑模式设定</h6><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *  tableView 是否可以进入编辑状态</div><div class="line"> *</div><div class="line"> */</div><div class="line">- (<span class="built_in">BOOL</span>)tableView:(<span class="built_in">UITableView</span> *)tableView canEditRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *  设置编辑样式(如果不设置,会使用系统自带的删除方法,不能多选删除,只能单个删除. 会调用下面 注释掉的那个方法)</div><div class="line"> *</div><div class="line"> */</div><div class="line">- (<span class="built_in">UITableViewCellEditingStyle</span>)tableView:(<span class="built_in">UITableView</span> *)tableView editingStyleForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</div><div class="line">    <span class="keyword">return</span>   <span class="built_in">UITableViewCellEditingStyleDelete</span> | <span class="built_in">UITableViewCellEditingStyleInsert</span>;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/07/07/iOS-自定义cell多选删除/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/07/iOS-自定义cell多选删除/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-iOS开发-非常全的三方库、插件、大牛博客等等" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/05/iOS开发-非常全的三方库、插件、大牛博客等等/">iOS开发 非常全的三方库、插件、大牛博客等等</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/05/iOS开发-非常全的三方库、插件、大牛博客等等/" class="archive-article-date">
-  	<time datetime="2017-07-05T02:56:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Git用法"><a href="#Git用法" class="headerlink" title="Git用法@"></a>Git用法@</h4><ul>
-<li><a href="https://github.com/geeeeeeeeek/git-recipes" target="_blank" rel="external">git-recipes</a> Git recipes in Chinese. 高质量的Git中文教程.</li>
-<li><a href="https://github.com/larkjs/lark/wiki/%E6%80%8E%E6%A0%B7%E8%B4%A1%E7%8C%AE%E4%BB%A3%E7%A0%81" target="_blank" rel="external">lark</a> 怎样在Github上面贡献代码</li>
-<li><a href="https://github.com/xirong/my-git" target="_blank" rel="external">my-git</a>有关 git 的学习资料</li>
-<li><a href="https://github.com/github/gitignore" target="_blank" rel="external">gitignore</a> 非常赞 有用的.gitignore模板集合(忽略上传的文件集合)，包含了各种语言.</li>
-<li><a href="https://www.youtube.com/watch?v=4XpnKHJAok8" target="_blank" rel="external">Linus讲解git</a> - Google大会演讲，Linus介绍他创造git的原因，对比了git和svn。</li>
-<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git教程 - 廖雪峰的官方网站</a> - 史上最浅显易懂的Git教程！</li>
-<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a> - 助你入门 git 的简明指南，木有高深内容 ;)</li>
-<li><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">常用 Git 命令清单</a> - 来自阮一峰的网络日志，列出了 Git 最常用的命令。</li>
-<li><a href="https://git.oschina.net/progit/" target="_blank" rel="external">Pro Git（中文版）</a> - 书</li>
-<li><a href="http://www.kafeitu.me/git/2012/03/27/git-submodule.html" target="_blank" rel="external">Git Submodule使用完整教程</a> - Git Submodule功能刚刚开始学习可能觉得有点怪异，所以本教程把每一步的操作的命令和结果都用代码的形式展现给大家，以便更好的理解。</li>
-<li><a href="http://www.worldhello.net/gotgit/" target="_blank" rel="external">Git权威指南</a> - 书</li>
-<li><a href="http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html" target="_blank" rel="external">git-flow 备忘清单</a> - git-flow 是一个 git 扩展集，按 Vincent Driessen 的分支模型提供高层次的库操作。</li>
-<li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/" target="_blank" rel="external">Git Magic</a> -stanford出品</li>
-<li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/" target="_blank" rel="external">Atlassian Git Tutorials</a> - atlassian出品</li>
-<li><a href="https://try.github.io/levels/1/challenges/1" target="_blank" rel="external">Try Git ( Interactive)</a> -互动性的教你使用git</li>
-<li><a href="https://wiki.archlinux.org/index.php/Git_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="external">Git (简体中文)</a>) -archlinux出品</li>
-<li><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="external">Git Community Book 中文版</a> -这本书汇聚了Git社区的很多精华, 其目的就是帮助你尽快的掌握Git.</li>
-<li><a href="https://github.com/devspace/awesome-github-templates" target="_blank" rel="external">awesome-github-templates</a> - github issue 和 pull request教程模板.</li>
-<li><a href="https://github.com/geeeeeeeeek/git-recipes" target="_blank" rel="external">git-recipes</a> -高质量的Git中文教程，来自国外社区的优秀文章和个人实践</li>
-<li><a href="http://jlord.us/git-it/" target="_blank" rel="external">git-it</a> - GitHub一位女员工写的Git教程，繁体中文版在这里可以找到: <a href="http://jlord.us/git-it/index-zhtw.html" target="_blank" rel="external">http://jlord.us/git-it/index-zhtw.html</a></li>
-<li><a href="http://www.git-town.com/" target="_blank" rel="external">Git Town</a> - GitTown 定义了很多高级的 git 命令，例如 git ship / git sync 等以方便 git 的使用</li>
-<li><a href="https://github.com/git-tips/tips" target="_blank" rel="external">git-tips</a> - 最常用的Git的提示和技巧。</li>
-<li><a href="http://www.jianshu.com/p/482b32716bbe" target="_blank" rel="external">「Githug」Git 游戏通关流程</a> - 这个命令行工具通过游戏的方式来练习你的 Git 技能</li>
-<li><a href="https://github.com/progit/progit2-zh" target="_blank" rel="external">progit2-zh</a> - Pro Git，第二版，简体中文</li>
-<li><a href="https://github.com/agis-/git-style-guide" target="_blank" rel="external">git-style-guide</a>- git风格指南</li>
-<li><a href="https://github.com/xhacker/GitProTips/blob/master/zh_CN.md" target="_blank" rel="external">Git 进阶技巧</a> - 适合了解 Git 的基本使用，知道 commit、push、pull，希望掌握 Git 更多功能的人阅读。</li>
-<li><a href="https://github.com/NataliaLKB/learn-git-basics" target="_blank" rel="external">learn-git-basics</a> - git 指南</li>
-<li><a href="https://github.com/doggy8088/Learn-Git-in-30-days/blob/master/zh-tw/README.md" target="_blank" rel="external">30 天精通 Git 版本控管</a></li>
-<li><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">图解Git</a> - 图解git中的最常用命令。如果你稍微理解git的工作原理，这篇文章能够让你理解的更透彻。</li>
-<li><a href="http://igit.linuxtoy.org/contents.html" target="_blank" rel="external">沉浸式学 Git</a> - 简洁github教程，每步信息量都不大，可以尝试一下。</li>
-<li><a href="https://github.com/DefaultYuan/Git-Pro" target="_blank" rel="external">工作中常用的Git命令行</a> - 自己在工作中常用的Git命令行的小总结！</li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/07/05/iOS开发-非常全的三方库、插件、大牛博客等等/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/05/iOS开发-非常全的三方库、插件、大牛博客等等/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Hexo＋GitHub搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/03/Hexo＋GitHub搭建博客/">Hexo＋GitHub搭建博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/03/Hexo＋GitHub搭建博客/" class="archive-article-date">
-  	<time datetime="2017-07-03T12:43:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><h3 id="安装note-js"><a href="#安装note-js" class="headerlink" title="安装note.js"></a>安装note.js</h3><p>1.首先安装homebrew</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/<span class="keyword">install</span>/<span class="keyword">master</span>/<span class="keyword">install</span>)<span class="string">"</span></div></pre></td></tr></table></figure>
-<p>2.安装note.js</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">brew link <span class="keyword">node</span></div><div class="line"><span class="title">brew</span> uninstall <span class="keyword">node</span></div><div class="line"><span class="title">brew</span> install <span class="keyword">node</span><span class="title"></span></div></pre></td></tr></table></figure>
-<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>git</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/07/03/Hexo＋GitHub搭建博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">网站Web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/03/Hexo＋GitHub搭建博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -590,9 +221,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
