@@ -215,7 +215,7 @@
 <h3 id="使用hexo-deploy部署Hexo到Github-Pages"><a href="#使用hexo-deploy部署Hexo到Github-Pages" class="headerlink" title="使用hexo deploy部署Hexo到Github Pages"></a>使用hexo deploy部署Hexo到Github Pages</h3><p>hexo deploy可以部署到很多平台，具体可以<a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">参考这个链接</a>. 如果部署到github，需要在配置文件_config.xml中作如下修改：</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:jiji262/jiji262.github.io.git</div><div class="line">  <span class="attribute">branch</span>: master</div></pre></td></tr></table></figure>
 <p>然后在命令行中执行</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo</span> d</div></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure>
 <p>即可完成部署。</p>
 <p>试着打开连接username.github.io应该就可以打开你的博客了</p>
 <p><strong>踩坑提醒</strong></p>
